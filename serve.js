@@ -30,6 +30,10 @@ io.on('connection',socket =>{
         socket.on('message',message =>{
             io.to(roomid).emit('createmessage',message)
         })
+
+        socket.on('disconnect',()=>{
+            socket.to(roomid).broadcast.emit('user-disconnected',userID);
+        })
     })
 })
 

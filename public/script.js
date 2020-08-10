@@ -46,6 +46,10 @@ navigator.mediaDevices.getUserMedia({
         scrolltobottom();
     })
 })
+
+socket.on('user-disconnected',userID =>{
+    if(peer[userID]) peer[userID].close();
+})
  
 
 
