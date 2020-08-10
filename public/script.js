@@ -10,6 +10,7 @@ var peer = new Peer(undefined,{
 })
 
 let myvideostream;
+const peers={}
 
 navigator.mediaDevices.getUserMedia({
     video: true,
@@ -48,7 +49,7 @@ navigator.mediaDevices.getUserMedia({
 })
 
 socket.on('user-disconnected',userID =>{
-    if(peer[userID]) peer[userID].close();
+    if(peers[userID]) peers[userID].close();
 })
  
 
