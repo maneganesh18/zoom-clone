@@ -42,7 +42,7 @@ navigator.mediaDevices.getUserMedia({
 
     socket.on('createmessage',message=>{
         console.log('this is server' + message);
-        $('ul').append(`<li class="message"><b>user<b><br/>${message}</li>`);
+        $('ul').append(`<li class="message"><b>user</b><br/>${message}</li>`);
         scrolltobottom();
     })
 })
@@ -74,7 +74,7 @@ const addVideostream = (video,stream)=>{
 
 const scrolltobottom =() =>{
     let d =$('.main-chat-window') ;
-    d.scrollTop(d.pop("scrollHeight"))
+    d.scrollTop(d.prop("scrollHeight"))
 }
 
 const muteunmute =()=>{
