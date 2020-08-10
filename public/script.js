@@ -69,6 +69,7 @@ const connectNewUser =(userID ,stream) =>{
      call.on('close',()=>{
          video.remove();
      })
+     peers[userID] = call;
 }
 
 const addVideostream = (video,stream)=>{
